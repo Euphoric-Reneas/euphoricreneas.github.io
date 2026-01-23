@@ -3,23 +3,20 @@
   <p style="color:#FFEB4D;">WELCOME TO MY HUMBLE ABODE :p</p> 
 </div>
      
- <button id="playButton">🎵 Play Music</button>
-
-<style>
-#playButton {
-  font-size: 28px;      /* text + emoji size */
-  padding: 25px 50px;   /* button size */
-  border-radius: 15px;
-  cursor: pointer;
-}
-</style>
-
-<button id="playButton">🎵 Play Music</button>
-
-<audio id="bgMusic" loop>
-  <source src="images/Pink Pantheress - Pain (Official Visualiser).mp3" type="audio/mpeg">
+<!-- MUSIC PLAYER -->
+<audio id="bgmusic" controls loop>
+  <source src="music.mp3" type="audio/mpeg">
+  Your browser does not support audio.
 </audio>
 
+<script>
+  const music = document.getElementById("bgmusic");
+
+  // auto play after user clicks anywhere
+  document.addEventListener("click", () => {
+    music.play();
+  });
+</script>
 
 
 <!DOCTYPE html>
