@@ -2,22 +2,6 @@
   <h1 style="color:#00ffff;">EUPHORIC RENEAS :3</h1> 
   <p style="color:#FFEB4D;">WELCOME TO MY HUMBLE ABODE :p</p> 
 </div>
-     
-<!-- MUSIC PLAYER -->
-<audio id="bgmusic" controls loop>
-  <source src="images/Pink Pantheress - Pain (Official Visualiser).mp3" type="audio/mpeg">
-  Your browser does not support audio.
-</audio>
-
-<script>
-  const music = document.getElementById("bgmusic");
-
-  // auto play after user clicks anywhere
-  document.addEventListener("click", () => {
-    music.play();
-  });
-</script>
-
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -379,6 +363,24 @@ function randomLink() {
  
     </div>
 </div>
+  <!-- AUTOPLAY BACKGROUND MUSIC -->
+<audio id="bg-music" autoplay loop>
+  <source src="images/Pink Pantheress - Pain (Official Visualiser).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const music = document.getElementById("bg-music");
+
+  // try autoplay
+  music.volume = 0.5;
+  music.play().catch(() => {
+    // fallback if browser blocks autoplay
+    document.addEventListener("click", () => {
+      music.play();
+    }, { once: true });
+  });
+</script>
+
 </body>
 </html>
 
