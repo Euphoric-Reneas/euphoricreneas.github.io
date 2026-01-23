@@ -362,10 +362,22 @@ function randomLink() {
         <!-- Shows at the bottom when your site was last updated, completely optional but fun to have! -->
         Last updated: <script language="JavaScript">document.write(document.lastModified);</script>
       
-   <audio autoplay loop>
+ <button id="playButton">🎵 Play Music</button>
+
+<audio id="bgMusic" loop>
   <source src="images/Pink Pantheress - Pain (Official Visualiser).mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+
+<script>
+  const button = document.getElementById('playButton');
+  const music = document.getElementById('bgMusic');
+
+  button.addEventListener('click', () => {
+    music.play();
+    button.style.display = 'none'; // hide the button once music starts
+  });
+</script>
 
     </div>
 </div>
